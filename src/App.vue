@@ -1,29 +1,222 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+  <div id="app" class="container">
+    <header id="main-header" class="row">
+      <h1>Hello, I'm Marcus</h1>
+    </header>
+
+    <nav class="row">
+      <ul>
+        <li>
+          <router-link to="/">Home</router-link>
+        </li>
+        <li>
+          <a href="#">Blog</a>
+        </li>
+        <li>
+          <a href="#">Hire me</a>
+        </li>
+        <li>
+          <router-link to="/contact">Contact</router-link>
+        </li>
+      </ul>
+    </nav>
+
     <router-view/>
+
+    <footer>&copy; Marcus Ball</footer>
   </div>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+/*************************************/
+/** Fonts                           **/
+/*************************************/
+
+body {
+  font-size: 20px;
 }
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+
+@media (max-width: 1580px) {
+  html {
+    font-size: 18px;
   }
+}
+@media (max-width: 980px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/*************************************/
+/** Base elements                   **/
+/*************************************/
+
+h1 {
+  font-size: 2.747em;
+}
+h2 {
+  font-size: 2.22em;
+}
+h3 {
+  font-size: 1.8em;
+}
+
+a {
+  color: #786d8d;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: bold;
+}
+
+code {
+  font-family: monospace;
+}
+
+article {
+  padding: 1em 0em;
+}
+
+article:not(:last-of-type) {
+  border-bottom: 1px solid #b9aece;
+}
+
+ol,
+ul {
+  padding: 0.5em 0 0.5em 1.5em;
+}
+
+ol {
+  list-style: decimal;
+}
+
+ul {
+  list-style: square;
+}
+
+/*************************************/
+/** Containers                      **/
+/*************************************/
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: #e4e4e4 none;
+  color: #25202e;
+  line-height: 1.4;
+
+  /**
+   * Prevent the scrollbar from shifting content 
+   * @see http://stackoverflow.com/a/30293718/451726
+   */
+  padding-left: calc(100vw - 100%);
+}
+
+.container {
+  margin: 0 auto;
+  min-width: 25em;
+  max-width: 33em; /* http://maxdesign.com.au/articles/em/ */
+
+  /* http://stackoverflow.com/a/24979148/451726 */
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+.container img {
+  max-width: 100%;
+}
+
+pre {
+  padding: 0.5em 0;
+}
+
+/* Add a space above paragraphs that follow other paragraphs. */
+p + p {
+  padding: 0.5em 0 0;
+}
+
+blockquote {
+  border-left: 0.25em solid #b9aece;
+  margin: 0.5em 0 0.5em 0.4em;
+  padding: 0.1em 0 0.1em 0.4em;
+}
+
+.fill-content {
+  flex: 1 1 auto; /* http://stackoverflow.com/a/24979148/451726 */
+}
+
+/*************************************/
+/** Header/Footer                   **/
+/*************************************/
+
+#main-header {
+  text-align: center;
+  flex: 0 1 auto; /* http://stackoverflow.com/a/24979148/451726 */
+}
+
+footer {
+  flex: 0 1 40px;
+  margin: 0.5em 0 0 0;
+  padding: 0.5em 0 0.5em 0;
+  border-top: 1px solid #bbb;
+  color: #bbb;
+}
+
+/*************************************/
+/** Navigation                      **/
+/*************************************/
+
+nav ul {
+  list-style: none;
+  text-align: center;
+}
+
+nav li {
+  display: inline-block;
+  padding: 0.2em 1em;
+}
+
+nav li a {
+  color: #25202e;
+  font-family: montserratregular, "Open Sans", HelveticaNeue, "Helvetica Neue",
+    Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+}
+
+nav li:hover a {
+  text-decoration: none;
+  border-bottom: 2px solid #25202e;
+}
+
+/*************************************/
+/** Post styles                     **/
+/*************************************/
+
+.post-title h2 {
+  margin: 0.3em 0;
+}
+
+.post-title a {
+  color: #25202e;
+}
+
+/*************************************/
+/** Specific overrides              **/
+/*************************************/
+.hljs {
+  border: 1px solid #b9aece;
+  background: #e1dee6 none !important;
 }
 </style>
