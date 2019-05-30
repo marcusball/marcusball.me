@@ -23,10 +23,7 @@
         <h3>Keys</h3>
         <ul>
           <li>
-            <a href="/static/files/marcusball-smime.crt">Email S/MIME certificate</a>
-          </li>
-          <li>
-            <a href="/static/files/marcusball-pgp.asc">PGP certificate</a>
+            <a href="/files/marcusball-pgp.asc">PGP certificate</a>
             (
             <a href="https://keybase.io/marcusball/pgp_keys.asc">Keybase mirror</a>)
             <br>
